@@ -1,1 +1,1 @@
-# somoobsluha
+# samoobsluha
