@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/services/DepositDashboardService/v02_01" xmlns:ns0193="http://csas.cz/CDM/v02/Products" xmlns:ns1425="http://csas.cz/services/DepositDashboardService/v02_01" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:import namespace="http://csas.cz/CDM/v02/Products" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getDepositDetail_v02_01_REQ.ns0193.xsd"/>
+  <xsd:element name="getDepositDetailRequest">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="cs">Vraci dashboard s detailnimi informacemi o depositnim produktu</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="1" minOccurs="0" name="account">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="accountNumber">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_REQ.ns1425.getDepositDetailRequest.ns1425.account.ns1425.accountNumber.bankCode"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_REQ.ns1425.getDepositDetailRequest.ns1425.account.ns1425.accountNumber.accountNumber"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_REQ.ns1425.getDepositDetailRequest.ns1425.account.ns1425.accountNumber.accountPrefix"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="0" name="hashedIds">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="hashedId">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="1" minOccurs="1" name="cgpHashedId">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="40"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="0" name="iban">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_REQ.ns1425.getDepositDetailRequest.ns1425.account.ns1425.iban.iban"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="0" name="productInstances">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="productInstance">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="1" minOccurs="1" name="cgpProductInstanceId">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:minLength value="1"/>
+                                <xsd:maxLength value="120"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

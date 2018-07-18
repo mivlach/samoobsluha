@@ -1,0 +1,83 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:ws="http://jax-ws.dev.java.net/spring/core" xmlns:wss="http://jax-ws.dev.java.net/spring/servlet"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:sws="http://www.springframework.org/schema/web-services"
+
+
+	xsi:schemaLocation="http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-4.1.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.1.xsd
+	   http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+	   http://www.springframework.org/schema/task
+	   http://www.springframework.org/schema/task/spring-task-4.1.xsd
+	   http://jax-ws.dev.java.net/spring/core
+       http://jax-ws.dev.java.net/spring/core.xsd
+       http://jax-ws.dev.java.net/spring/servlet
+       http://jax-ws.dev.java.net/spring/servlet.xsd
+	   http://www.springframework.org/schema/jee
+	   http://www.springframework.org/schema/jee/spring-jee-4.1.xsd
+	   http://www.springframework.org/schema/web-services
+	   http://www.springframework.org/schema/web-services/web-services-2.0.xsd">
+	<bean id="messageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory" />
+	<bean
+		class="org.springframework.ws.transport.http.WebServiceMessageReceiverHandlerAdapter">
+		<property name="messageFactory" ref="messageFactory" />
+	</bean>
+
+	<bean
+		class="org.springframework.ws.transport.http.WsdlDefinitionHandlerAdapter" />
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="*.wsdl">myServiceDefinition</prop>
+			</props>
+		</property>
+		<property name="defaultHandler" ref="messageDispatcher" />
+	</bean>
+
+	<bean id="messageDispatcher"
+		class="org.springframework.ws.soap.server.SoapMessageDispatcher" />
+
+	<bean id="myServiceDefinition"
+		class="org.springframework.ws.wsdl.wsdl11.SimpleWsdl11Definition">
+		<property name="wsdl"
+			value="/WEB-INF/WS_MW_POC_DepositDashboardService_v02_01.wsdl" />
+	</bean>
+
+	<sws:interceptors>
+		<bean id="validatingInterceptor"
+			class="org.springframework.ws.soap.server.endpoint.interceptor.PayloadValidatingInterceptor">
+			<property name="schemas" value="/WEB-INF/xsd_test/*.xsd" />
+			<property name="validateRequest" value="true" />
+			<property name="validateResponse" value="true" />
+		</bean>
+	</sws:interceptors>
+
+	<context:annotation-config />
+
+	<bean id="soapEndpointAdapter" class="cz.csas.mw.soap.SoapEndpointAdapter" />
+	
+	<bean id="soapEndpointMapping" class="cz.csas.mw.soap.SoapEndpointMapping">
+		<property name="soapEndpoint" ref="soapEndpoint" />
+	</bean>
+	<bean id="soapEndpoint" class="cz.csas.mw.soap.SoapEndpoint">
+		<property name="servicePrefix" value="MW_POC_DepositDashboardService_" />
+		<property name="servicePostfix" value="_v02_01" />
+		<property name="backendUri" value="http://ekaterinas-macbook-pro.local:8081/soapmock/services" />
+	</bean>
+
+	<bean id="exceptionResolver"
+		class="org.springframework.ws.soap.server.endpoint.SoapFaultMappingExceptionResolver">
+
+		<property name="defaultFault" value="SERVER" />
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.springframework.oxm.ValidationFailureException">SERVER,ValidationError</prop>
+				<prop key="cz.csas.mw.pipes.WsException">SERVER,Server Error</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

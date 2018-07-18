@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/CDM/v02/Products/Deposits" xmlns:ns0380="http://csas.cz/CDM/v02/Products/Deposits" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.remainingRevolvingCount">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="remainingRevolvingCount" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Pocet zbyvajicich cyklu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.revolvingDeposit">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="revolvingDeposit" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Pokud true, vkladovy ucet se automaticky obnovuje.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.depositWithdrawalTerm">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="depositWithdrawalTerm" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Lhuta (ve dnech) pro vyber po ukonceni ulozni doby bez pokuty. Plati pro revolvingove vklady, kdy uz bezi dalsi cyklus.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.minBalance">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="minBalance">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Minimalni zustatek o vkladovych produktu.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18"/>
+            <xsd:fractionDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.depositPurpose">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="depositPurpose">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+</xsd:schema>

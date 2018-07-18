@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/CDM/v02/Products/Transactions" xmlns:ns0192="http://csas.cz/CDM/v02/Products/Transactions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.instruction.created">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="created" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Datum zalozeni instrukce</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.instruction.instructionType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="instructionType">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Typ instrukce (trvaly prikaz, souhlas s inkasem apod.)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.payment.ks">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ks">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Konstantni symbol</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.payment.ss">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ss">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Specificky symbol</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.payment.vs">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="vs">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Variabilni symbol</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.period.ns1425.sb.dueMonth">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="dueMonth" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Pozice mesice splatnosti</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.period.ns1425.sb.periodCycle">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="periodCycle">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Kod cyklu souhlasu s inkasem</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="32"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.period.ns1425.sb.periodicity">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="periodicity" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.period.ns1425.spz.periodCycle">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="periodCycle">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Kod cyklu souhlasu s inkasem</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="32"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.validity.endDate">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="endDate" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Platnost verze do</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.validity.startDate">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="startDate" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Platnost verze od</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.approvalSymbol">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="approvalSymbol">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Symbol souhlasu s inkasem; 41 znamena SIPO</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.dayFrom">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="dayFrom" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Pozice dne splatnosti od</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.dayTo">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="dayTo" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Pozice dne splatnosti do</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.endDate">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="endDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.executedAmount">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="executedAmount">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Suma provedenych plateb v ramci aktualniho obdobi cerpani</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18"/>
+            <xsd:fractionDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.executedCount">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="executedCount" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Pocet provedenych instrukci za aktualni obdobi cerpani</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.restriction">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="restriction">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">relevantne pre SPZ: S1 znamena souhlas cileny na bankovni spojeni (navic muze a nemusi specifikovat napr. variabilni symbol) S2 je souhlas bez bankovniho spojeni, kontroluje se shoda na variabilni symbol S3 je vseobecny souhlas - inkasovat muze kdokoli</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.instructionText">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="instructionText" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.limit">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="limit">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Any amount of money.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18"/>
+            <xsd:fractionDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.numberLimit">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="numberLimit" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Maximalni pocet inkas</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.orderNumber">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="orderNumber" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Identifikace souhlasu s inkasem (cislo souhlasu)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.startDate">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="startDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.sumLimit">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="sumLimit">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Limit souctu inkas</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18"/>
+            <xsd:fractionDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.deathFlag">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="deathFlag" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Priznak, jestli ma platit trvaly prikaz i po smrti majitele uctu ( T / F)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.versionId">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="versionId" type="xsd:int"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ks">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ks">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Konstantni symbol</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ss">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ss">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Specificky symbol</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.vs">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="vs">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Variabilni symbol</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.instruction.created">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="created" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Datum zalozeni instrukce</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.instruction.instructionType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="instructionType">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Typ instrukce (trvaly prikaz, souhlas s inkasem apod.)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.amount">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="amount">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Castka nebo limit</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18"/>
+            <xsd:fractionDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.currency">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="currency">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Mina</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="3"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.ks">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ks">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Konstantni symbol</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.recipientNote1">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="recipientNote1">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Sprava pro poijemce.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="35"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.recipientNote2">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="recipientNote2">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Sprava pro poijemce.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="35"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.recipientNote3">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="recipientNote3">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Sprava pro poijemce.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="35"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.recipientNote4">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="recipientNote4">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Sprava pro poijemce.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="35"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.ss">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="ss">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Specificky symbol</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.vs">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="vs">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Variabilni symbol</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.period.ns1425.sb.frequencyCode">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="frequencyCode">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">kod frekvence trvaleho prikazu</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="32"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.period.ns1425.sb.cyclePeriod">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="cyclePeriod" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">identifikator periody opakovani trvaleho prikazu</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.period.ns1425.sb.dueDay">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="dueDay" type="xsd:short">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Pozice dne splatnosti</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.period.ns1425.sb.dueMonth">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="dueMonth" type="xsd:short">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Pozice mesice splatnosti</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.period.ns1425.spz.frequencyCode">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="frequencyCode">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">kod frekvence trvaleho prikazu</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="32"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.period.ns1425.spz.dueDay">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="dueDay">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Pozice dne splatnosti</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.validity.endDate">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="endDate" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Datum zacatku platnosti verze</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.validity.startDate">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="startDate" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Datum konce platnosti verze</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.endDate">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="endDate" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.executedAmount">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="executedAmount">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Suma provedenych plateb v ramci TP</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18"/>
+            <xsd:fractionDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.executedCount">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="executedCount" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Pocet provedenych plateb v ramci TP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.standingOrderName">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="standingOrderName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Informace uctu (zpravu rozdelit v pripade potreby na max 4 casti po 35 symbolech)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.monthEndInterruption">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="monthEndInterruption">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.monthStartInterruption">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="monthStartInterruption">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.numberOfOrders">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="numberOfOrders" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Celkovy pocet trvalych prikazu</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.orderNumber">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="orderNumber" type="xsd:long">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Identifikace (cislo) trvaleho prikazu</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.startDate">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="startDate" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Datum zactaku platnosti instrukce</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.totalAmount">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="totalAmount">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Celkova suma vsech trvalych prikazu</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18"/>
+            <xsd:fractionDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.autoBalanceLimit">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="autoBalanceLimit">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">limit for sweep orders. This is used for upper and lower limit depending on autoLimitType.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18"/>
+            <xsd:fractionDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.autoLimitType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="autoLimitType">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DUAL">
+              <xsd:annotation>
+                <xsd:documentation>Dual, Regulace zustatku jak sdola, tak shora.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="LOWER">
+              <xsd:annotation>
+                <xsd:documentation>Lower</xsd:documentation>
+              </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="UPPER">
+              <xsd:annotation>
+                <xsd:documentation>Upper</xsd:documentation>
+              </xsd:annotation>
+            </xsd:enumeration>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.dateEndInterruption">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="dateEndInterruption" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Datum konce preruseni platnosti verze</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.dateStartInterruption">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="dateStartInterruption" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Datum zacatku preruseni platnosti verze</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.death">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="death" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Priznak, jestli ma platit trvaly prikaz i po smrti majitele uctu ( T / F)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.nextPaymentDate">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="nextPaymentDate" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Datum dalsi platby</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.versionID">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="versionID" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Cislo verze</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+</xsd:schema>

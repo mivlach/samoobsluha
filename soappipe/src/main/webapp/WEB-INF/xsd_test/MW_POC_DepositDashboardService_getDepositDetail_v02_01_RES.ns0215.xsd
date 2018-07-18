@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/CDM/v02/Products/Accounts" xmlns:ns0215="http://csas.cz/CDM/v02/Products/Accounts" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.statementOrdinalNumber">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="statementOrdinalNumber" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Poradove cislo vypisu. V pripade, ze poradove cislo vypisu neexistuje (StarBank - ZUV 207 a ZUV 208 a Symbols), je uvedeno poradove cislo „000“.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.statementDistribution">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="statementDistribution" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Zpusob predavani vypisu.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.statementFrequency">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="statementFrequency" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Frekvence generovani vypis?.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.statementId">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="statementId">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Cislo vypisove rady (SPZ, SB, DON)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="60"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.statementLanguage">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="statementLanguage" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Jazyk vypisu</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.statementLine">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="statementLine" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Typ vypisove rady</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.validFrom">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="validFrom" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.validTo">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="validTo" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:group>
+</xsd:schema>

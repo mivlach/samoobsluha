@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/services/DepositDashboardService/v02_01" xmlns:ns0189="http://csas.cz/CDM/v02/Steering/Party" xmlns:ns0192="http://csas.cz/CDM/v02/Products/Transactions" xmlns:ns0193="http://csas.cz/CDM/v02/Products" xmlns:ns0194="http://csas.cz/BOM/v02/service/Technical" xmlns:ns0209="http://csas.cz/CDM/v02/Channels" xmlns:ns1425="http://csas.cz/services/DepositDashboardService/v02_01" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:import namespace="http://csas.cz/CDM/v02/Steering/Party" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns0189.xsd"/>
+  <xsd:import namespace="http://csas.cz/CDM/v02/Products/Transactions" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns0192.xsd"/>
+  <xsd:import namespace="http://csas.cz/CDM/v02/Products" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns0193.xsd"/>
+  <xsd:import namespace="http://csas.cz/BOM/v02/service/Technical" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns0194.xsd"/>
+  <xsd:import namespace="http://csas.cz/CDM/v02/Channels" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns0209.xsd"/>
+  <xsd:element name="getAccountInstructionsResponse">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="cs">Vraci instrukce na eetu</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="1" minOccurs="1" name="dashboardBlocks">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="directDebits">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="directDebit">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="1" minOccurs="1" name="instruction">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element maxOccurs="1" minOccurs="0" name="originator">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element maxOccurs="1" minOccurs="1" name="originatorCode">
+                                        <xsd:annotation>
+                                          <xsd:documentation xml:lang="en">Puvodce (puvod zaznamu) - struktura atributu je specificka pro zdrojovy system</xsd:documentation>
+                                        </xsd:annotation>
+                                        <xsd:simpleType>
+                                          <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="40"/>
+                                          </xsd:restriction>
+                                        </xsd:simpleType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.instruction.created"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.instruction.instructionType"/>
+                                <xsd:group ref="ns0209:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.instruction.distributionChannel"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="1" name="payment">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element maxOccurs="1" minOccurs="1" name="creditAccount">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.payment.ns1425.creditAccount.bankCode"/>
+                                      <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.payment.ns1425.creditAccount.accountNumber"/>
+                                      <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.payment.ns1425.creditAccount.accountPrefix"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.payment.ks"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.payment.ss"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.payment.vs"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="1" name="period">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element maxOccurs="1" minOccurs="0" name="sb">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.period.ns1425.sb.dueMonth"/>
+                                      <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.period.ns1425.sb.periodCycle"/>
+                                      <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.period.ns1425.sb.periodicity"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element maxOccurs="1" minOccurs="0" name="spz">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.period.ns1425.spz.periodCycle"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="validity">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.validity.endDate"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.validity.startDate"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.approvalSymbol"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.dayFrom"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.dayTo"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.endDate"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.executedAmount"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.executedCount"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.restriction"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.instructionText"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.limit"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.numberLimit"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.orderNumber"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.startDate"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.sumLimit"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.deathFlag"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.versionId"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ks"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ss"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.vs"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="0" name="standingOrders">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="standingOrder">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="address">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.address.l1_recipient"/>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.address.l2_supplement"/>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.address.l3_street"/>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.address.l4_city"/>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.address.l5_zipcode"/>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.address.l6_country"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="1" name="instruction">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element maxOccurs="1" minOccurs="0" name="originator">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element maxOccurs="1" minOccurs="1" name="originatorCode">
+                                        <xsd:annotation>
+                                          <xsd:documentation xml:lang="en">Puvodce (puvod zaznamu) - struktura atributu je specificka pro zdrojovy system</xsd:documentation>
+                                        </xsd:annotation>
+                                        <xsd:simpleType>
+                                          <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="40"/>
+                                          </xsd:restriction>
+                                        </xsd:simpleType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.instruction.created"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.instruction.instructionType"/>
+                                <xsd:group ref="ns0209:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.instruction.distributionChannel"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="1" name="payment">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element maxOccurs="1" minOccurs="1" name="creditAccount">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.ns1425.creditAccount.bankCode"/>
+                                      <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.ns1425.creditAccount.accountNumber"/>
+                                      <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.ns1425.creditAccount.accountPrefix"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.amount"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.currency"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.ks"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.recipientNote1"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.recipientNote2"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.recipientNote3"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.recipientNote4"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.ss"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.payment.vs"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="1" name="period">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element maxOccurs="1" minOccurs="0" name="sb">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.period.ns1425.sb.frequencyCode"/>
+                                      <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.period.ns1425.sb.cyclePeriod"/>
+                                      <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.period.ns1425.sb.dueDay"/>
+                                      <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.period.ns1425.sb.dueMonth"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element maxOccurs="1" minOccurs="0" name="spz">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.period.ns1425.spz.frequencyCode"/>
+                                      <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.period.ns1425.spz.dueDay"/>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="validity">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.validity.endDate"/>
+                                <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.validity.startDate"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.endDate"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.executedAmount"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.executedCount"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.standingOrderName"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.monthEndInterruption"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.monthStartInterruption"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.numberOfOrders"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.orderNumber"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.startDate"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.totalAmount"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.autoBalanceLimit"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.autoLimitType"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.dateEndInterruption"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.dateStartInterruption"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.death"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.nextPaymentDate"/>
+                          <xsd:group ref="ns0192:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.versionID"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="1" name="status">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:group ref="ns0194:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.status.pageReference"/>
+              <xsd:group ref="ns0194:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.status.queryLastPage"/>
+              <xsd:group ref="ns0194:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.status.result"/>
+              <xsd:group ref="ns0194:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.status.totalPageNo"/>
+              <xsd:group ref="ns0194:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.status.errors"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/CDM/v02/Products/Loans" xmlns:ns0198="http://csas.cz/CDM/v02/Products/Loans" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.interestRates.ns1425.interestRate.interestRateFrequency">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="interestRateFrequency">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">perioda uroeeni</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="32"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.interestRates.ns1425.interestRate.validFrom">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="validFrom" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.interestRates.ns1425.interestRate.validTo">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="validTo" type="xsd:date"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.overdraft.loanAmount">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="loanAmount">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Limit uviru.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18"/>
+            <xsd:fractionDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.overdraft.maturityDate">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="maturityDate" type="xsd:date">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Doba splatnosti.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.overdraft.productId">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="productId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Eiselnik revolvingovych uvirovych produktu (KTK, kreditka, ...)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+</xsd:schema>

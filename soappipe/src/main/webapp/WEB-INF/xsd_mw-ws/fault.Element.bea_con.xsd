@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://www.bea.com/wli/sb/context" xmlns:bea_con="http://www.bea.com/wli/sb/context" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:element name="fault">
+    <xsd:complexType>
+      <xsd:all>
+        <xsd:element maxOccurs="1" minOccurs="0" name="faultcode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="faultstring" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="detail">
+          <xsd:complexType>
+            <xsd:all>
+              <xsd:element maxOccurs="1" minOccurs="0" name="fault">
+                <xsd:complexType>
+                  <xsd:all>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="errorCode" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="reason" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="location">
+                      <xsd:complexType>
+                        <xsd:all>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="node" type="xsd:string"/>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="pipeline" type="xsd:string"/>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="stage" type="xsd:string"/>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="error-handler" type="xsd:boolean"/>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="path">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:enumeration value="request-pipeline"/>
+                                <xsd:enumeration value="response-pipeline"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                        </xsd:all>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="details">
+                      <xsd:complexType>
+                        <xsd:all>
+                          <xsd:element form="unqualified" maxOccurs="1" minOccurs="0" name="be_fault">
+                            <xsd:complexType>
+                              <xsd:all>
+                                <xsd:element form="unqualified" maxOccurs="1" minOccurs="0" name="faultcode" type="xsd:string"/>
+                                <xsd:element form="unqualified" maxOccurs="1" minOccurs="0" name="faultstring" type="xsd:string"/>
+                              </xsd:all>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:all>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:all>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:all>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:all>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

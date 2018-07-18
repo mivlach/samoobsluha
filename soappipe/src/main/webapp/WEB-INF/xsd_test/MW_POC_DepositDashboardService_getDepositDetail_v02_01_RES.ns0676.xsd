@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/CDM/v02/Products/ForeignExchange" xmlns:ns0676="http://csas.cz/CDM/v02/Products/ForeignExchange" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.ns1425.exchangeRate.rateCurrencyUnit">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="rateCurrencyUnit" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Jednotka meny ke ktere se vztahuje kurz.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.ns1425.exchangeRate.rateMean">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="rateMean" type="xsd:double">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Kurz stred</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+</xsd:schema>

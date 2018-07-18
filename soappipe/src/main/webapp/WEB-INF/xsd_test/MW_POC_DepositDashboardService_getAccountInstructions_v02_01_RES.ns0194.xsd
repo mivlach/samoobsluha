@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/BOM/v02/service/Technical" xmlns:ns0194="http://csas.cz/BOM/v02/service/Technical" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.status.pageReference">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="pageReference" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Nektere systemy (napr. SPZ) vraci pri strankovani toto cislo, ktere je nutne zadat do response v pripade dotazu na dalsi stranku. Implementacni logika by mela vzdy, pokud system vrati tuto referenci, ji v dalsim volani dat do response bez ohledu na volany BE system.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.status.queryLastPage">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="queryLastPage" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Is present only if service operation supports paging. This is indicated by presence of standart paging element in the request. Dokumentace: &lt;a href="javascript:top.guidLink('{nfl/pages/viewpage.action?pageId=48282092')"&gt;&lt;font color="#0000ff"&gt;&lt;u&gt;http://cnfl/pages/viewpage.action?pageId=48282092&lt;/u&gt;&lt;/font&gt;&lt;/a&gt; If present true means the last page has been served.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.status.result">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="result">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">OK Error Accepted Warning</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ACC">
+              <xsd:annotation>
+                <xsd:documentation>Accepted, Request has been accepted but processing has been postponed. The value is not used for asynchronous services.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ERR">
+              <xsd:annotation>
+                <xsd:documentation>Error, There has been an error which prevented action from being done.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OK">
+              <xsd:annotation>
+                <xsd:documentation>OK, Request has been processed correctly.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="WRN">
+              <xsd:annotation>
+                <xsd:documentation>Warning, Request has been processed with non fatal warnings.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:enumeration>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.status.totalPageNo">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="totalPageNo" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Celkovy pocet stranek na zaklade request atributu pageSize. Aplikace nemusi podporovat a pak je nutno se orientovat podle atributu queryLastPage.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.status.errors">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="errors">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="error">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element maxOccurs="1" minOccurs="1" name="code">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">Error code unique within a domain.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="1"/>
+                        <xsd:maxLength value="255"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1" minOccurs="1" name="domain">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">The domain within which error codes are unique.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="16"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1" minOccurs="0" name="entity">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">Nazev entity, ke ktere se chyba vaze. Nazvy nejsou normalizovany. To znamena, ze pokud jsou v requestu nachazi napriklad dve kolekce entity osoba, jednou jako kolekce dluzniku a jednou jako napriklad kolekce veritelu. nazev neni pro obe "Person" (i kdyz jsou treba stejneho typu Person), ale "Debtor" a "Creditor". Tim se rozli&amp;scaron;i ve ktere kolekci dana entita je.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="1"/>
+                        <xsd:maxLength value="255"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1" minOccurs="0" name="entityFieldName">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">Jmeno pole v ramci entity, ke kteremu se chyba vztahuje.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="1"/>
+                        <xsd:maxLength value="255"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1" minOccurs="0" name="entityId">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">Identifikace entity v ramci kolekce, ke ktere se chyba vztahuje.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="1"/>
+                        <xsd:maxLength value="255"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1" minOccurs="0" name="message">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">Detailed error description. Mainly used for logging purposes and should not be used for user presentation. Front end should use localized messages.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4000"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1" minOccurs="0" name="severity">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="E">
+                          <xsd:annotation>
+                            <xsd:documentation>Error, Error prevents request from being done.</xsd:documentation>
+                          </xsd:annotation>
+                        </xsd:enumeration>
+                        <xsd:enumeration value="W">
+                          <xsd:annotation>
+                            <xsd:documentation>Warning, Warning does not prevent request from being processed.</xsd:documentation>
+                          </xsd:annotation>
+                        </xsd:enumeration>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element maxOccurs="1" minOccurs="0" name="messageParams">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" name="messageParam">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element maxOccurs="1" minOccurs="1" name="name" type="xsd:string">
+                                <xsd:annotation>
+                                  <xsd:documentation xml:lang="en">Parameter name</xsd:documentation>
+                                </xsd:annotation>
+                              </xsd:element>
+                              <xsd:element maxOccurs="1" minOccurs="1" name="value" type="xsd:string">
+                                <xsd:annotation>
+                                  <xsd:documentation xml:lang="en">Parameter value. Although not strongly typed it is assumed that date time values are formatted using standard XML way.</xsd:documentation>
+                                </xsd:annotation>
+                              </xsd:element>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+</xsd:schema>

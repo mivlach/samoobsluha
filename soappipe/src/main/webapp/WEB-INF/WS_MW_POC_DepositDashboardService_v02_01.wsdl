@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://csas.cz/services/DepositDashboardService/v02_01MW_POC_DepositDashboardService_v02_01" xmlns="http://csas.cz/services/DepositDashboardService/v02_01MW_POC_DepositDashboardService_v02_01" xmlns:bea_con="http://www.bea.com/wli/sb/context" xmlns:mw="http://schemas.csas.cz/mw/" xmlns:ns1425="http://csas.cz/services/DepositDashboardService/v02_01" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wlisbc="http://www.bea.com/wli/sb/context" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsp:UsingPolicy wsdl:Required="true"/>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://csas.cz/services/DepositDashboardService/v02_01MW_POC_DepositDashboardService_v02_01">
+      <xsd:import namespace="http://www.bea.com/wli/sb/context" schemaLocation="xsd_mw-ws/fault.Element.bea_con.xsd"/>
+      <xsd:import namespace="http://schemas.csas.cz/mw/" schemaLocation="xsd_mw-ws/MWHeader.Element.mw.xsd"/>
+      <xsd:import namespace="http://csas.cz/services/DepositDashboardService/v02_01" schemaLocation="xsd_test/MW_POC_DepositDashboardService_getAccountInstructions_v02_01_REQ.ns1425.xsd"/>
+      <xsd:import namespace="http://csas.cz/services/DepositDashboardService/v02_01" schemaLocation="xsd_test/MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.xsd"/>
+      <xsd:import namespace="http://csas.cz/services/DepositDashboardService/v02_01" schemaLocation="xsd_test/MW_POC_DepositDashboardService_getDepositDetail_v02_01_REQ.ns1425.xsd"/>
+      <xsd:import namespace="http://csas.cz/services/DepositDashboardService/v02_01" schemaLocation="xsd_test/MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Fault">
+    <wsdl:part element="bea_con:fault" name="Fault"/>
+  </wsdl:message>
+  <wsdl:message name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_Request">
+    <wsdl:part element="mw:MWHeader" name="MWHeader"/>
+    <wsdl:part element="ns1425:getAccountInstructionsRequest" name="GetAccountInstructionsRequest"/>
+  </wsdl:message>
+  <wsdl:message name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_Response">
+    <wsdl:part element="mw:MWHeader" name="MWHeader"/>
+    <wsdl:part element="ns1425:getAccountInstructionsResponse" name="GetAccountInstructionsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_Request">
+    <wsdl:part element="mw:MWHeader" name="MWHeader"/>
+    <wsdl:part element="ns1425:getDepositDetailRequest" name="GetDepositDetailRequest"/>
+  </wsdl:message>
+  <wsdl:message name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_Response">
+    <wsdl:part element="mw:MWHeader" name="MWHeader"/>
+    <wsdl:part element="ns1425:getDepositDetailResponse" name="GetDepositDetailResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="MW_POC_DepositDashboardService_v02_01">
+    <wsdl:documentation>Dasboardova sluzba pro zobrazeni detailu bizneho uetu</wsdl:documentation>
+    <wsdl:operation name="getAccountInstructions">
+      <wsdl:documentation>Vraci instrukce na eetu</wsdl:documentation>
+      <wsdl:input message="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_Request"/>
+      <wsdl:output message="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_Response"/>
+      <wsdl:fault message="Fault" name="Fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDepositDetail">
+      <wsdl:documentation>Vraci dashboard s detailnimi informacemi o depositnim produktu</wsdl:documentation>
+      <wsdl:input message="MW_POC_DepositDashboardService_getDepositDetail_v02_01_Request"/>
+      <wsdl:output message="MW_POC_DepositDashboardService_getDepositDetail_v02_01_Response"/>
+      <wsdl:fault message="Fault" name="Fault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MW_POC_DepositDashboardService_v02_01_SOAP" type="MW_POC_DepositDashboardService_v02_01">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAccountInstructions">
+      <wsdl:documentation>Vraci instrukce na eetu</wsdl:documentation>
+      <soap:operation soapAction="http://127.0.0.1:7021/MW_POC_DepositDashboardService_v02_01#MW_POC_DepositDashboardService_getAccountInstructions_v02_01" style="document"/>
+      <wsdl:input>
+        <soap:header message="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_Request" part="MWHeader" use="literal"/>
+        <soap:body parts="GetAccountInstructionsRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_Response" part="MWHeader" use="literal"/>
+        <soap:body parts="GetAccountInstructionsResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Fault">
+        <soap:fault name="Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDepositDetail">
+      <wsdl:documentation>Vraci dashboard s detailnimi informacemi o depositnim produktu</wsdl:documentation>
+      <soap:operation soapAction="http://127.0.0.1:7021/MW_POC_DepositDashboardService_v02_01#MW_POC_DepositDashboardService_getDepositDetail_v02_01" style="document"/>
+      <wsdl:input>
+        <soap:header message="MW_POC_DepositDashboardService_getDepositDetail_v02_01_Request" part="MWHeader" use="literal"/>
+        <soap:body parts="GetDepositDetailRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header message="MW_POC_DepositDashboardService_getDepositDetail_v02_01_Response" part="MWHeader" use="literal"/>
+        <soap:body parts="GetDepositDetailResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Fault">
+        <soap:fault name="Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_MW_POC_DepositDashboardService_v02_01">
+    <wsdl:documentation>Dasboardova sluzba pro zobrazeni detailu bizneho uetu</wsdl:documentation>
+    <wsdl:port binding="MW_POC_DepositDashboardService_v02_01_SOAP" name="MW_POC_DepositDashboardService_v02_01">
+      <soap:address location="http://127.0.0.1:7021/CSMW/WS_MW_POC_DepositDashboardService_v02_01"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

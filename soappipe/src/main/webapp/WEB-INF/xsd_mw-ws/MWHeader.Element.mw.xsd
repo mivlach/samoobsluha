@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.csas.cz/mw/" xmlns:mw="http://schemas.csas.cz/mw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:element name="MWHeader">
+    <xsd:complexType>
+      <xsd:all>
+        <xsd:element maxOccurs="1" minOccurs="0" name="name" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="1" name="msguid">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Message id, unique within transaction source.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:long">
+              <xsd:minInclusive value="0"/>
+              <xsd:totalDigits value="14"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="1" name="trnsrc">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Transaction source id. The system ids are assigned to new clients and maintained at MW.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:int">
+              <xsd:minInclusive value="0"/>
+              <xsd:totalDigits value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="trnsrcname">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Transaction source name.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="10"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="trnuid">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Transaction id. See DTD Transaction Reference Number APP_SUP.doc</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:long">
+              <xsd:minInclusive value="0"/>
+              <xsd:totalDigits value="16"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="rctrn">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Alphanumeric representation of the trnuid for active transactions.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="12"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="1" name="trnuser">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Logged on user or system account, which generated the request.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="20"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="trndate" type="xsd:dateTime">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Date and time of message creation.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="version">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Backward compatibility - deprecated. Message version.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="10"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="sync">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Backward compatibility - deprecated. Synchronous or asynchronous way of calling target system.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="N"/>
+              <xsd:enumeration value="Y"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="confirm">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Backward compatibility - deprecated. Delivery notification (asynchronous reply) required.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="N"/>
+              <xsd:enumeration value="Y"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="timeout">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Timeout to be used when calling target system.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:int">
+              <xsd:minInclusive value="0"/>
+              <xsd:totalDigits value="5"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="trndebug">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Debug setting for target system (deprecated).</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="N"/>
+              <xsd:enumeration value="Y"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="cachetime" type="xsd:integer">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Only for cache supported services: cachetime=0 do not use OSB response cache (message will be sent to the backend and the response is stored in the cache and also sent to the FE);cachetime&gt;0 - use OSB response cache</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="0" name="correlationId">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">Universally unique identifier (UUID) version 4 to track communication from end to end</xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="50"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:all>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

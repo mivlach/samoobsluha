@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/CDM/v02/Channels" xmlns:ns0209="http://csas.cz/CDM/v02/Channels" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.directDebits.ns1425.directDebit.ns1425.instruction.distributionChannel">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="distributionChannel">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">prodejni kanal pobocka EPaK S24 B24</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_RES.ns1425.getAccountInstructionsResponse.ns1425.dashboardBlocks.ns1425.standingOrders.ns1425.standingOrder.ns1425.instruction.distributionChannel">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="distributionChannel">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">prodejni kanal pobocka EPaK S24 B24</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+</xsd:schema>

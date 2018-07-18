@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/services/DepositDashboardService/v02_01" xmlns:ns0189="http://csas.cz/CDM/v02/Steering/Party" xmlns:ns0193="http://csas.cz/CDM/v02/Products" xmlns:ns0194="http://csas.cz/BOM/v02/service/Technical" xmlns:ns0198="http://csas.cz/CDM/v02/Products/Loans" xmlns:ns0215="http://csas.cz/CDM/v02/Products/Accounts" xmlns:ns0380="http://csas.cz/CDM/v02/Products/Deposits" xmlns:ns0676="http://csas.cz/CDM/v02/Products/ForeignExchange" xmlns:ns1425="http://csas.cz/services/DepositDashboardService/v02_01" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:import namespace="http://csas.cz/CDM/v02/Steering/Party" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns0189.xsd"/>
+  <xsd:import namespace="http://csas.cz/CDM/v02/Products" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns0193.xsd"/>
+  <xsd:import namespace="http://csas.cz/BOM/v02/service/Technical" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns0194.xsd"/>
+  <xsd:import namespace="http://csas.cz/CDM/v02/Products/Loans" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns0198.xsd"/>
+  <xsd:import namespace="http://csas.cz/CDM/v02/Products/Accounts" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns0215.xsd"/>
+  <xsd:import namespace="http://csas.cz/CDM/v02/Products/Deposits" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns0380.xsd"/>
+  <xsd:import namespace="http://csas.cz/CDM/v02/Products/ForeignExchange" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns0676.xsd"/>
+  <xsd:element name="getDepositDetailResponse">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="cs">Vraci dashboard s detailnimi informacemi o depositnim produktu</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" name="deposit">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" name="recomendedDeposit">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">doporueena ulozka</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:decimal">
+                    <xsd:totalDigits value="18"/>
+                    <xsd:fractionDigits value="4"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="0" name="targetAmount">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">Cilova eastka</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:decimal">
+                    <xsd:totalDigits value="18"/>
+                    <xsd:fractionDigits value="4"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="0" name="backendProduct">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.backendProduct.backendProductId"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="0" name="contactAccount">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="accountNumber">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Account number without sort code and bank code.</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:maxLength value="10"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="accountPrefix">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Predcisli uctu, ekvivalent sortCode.</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:maxLength value="6"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="bankCode">
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:length value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="iban">
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:maxLength value="34"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="1" name="depositAccount">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.bankCode"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.accountNumber"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.accountPrefix"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="blockages">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="unbounded" minOccurs="1" name="blockage">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.ns1425.blockages.ns1425.blockage.dispositionWarning"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="exchangeRate">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:group ref="ns0676:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.ns1425.exchangeRate.rateCurrencyUnit"/>
+                          <xsd:group ref="ns0676:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.ns1425.exchangeRate.rateMean"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.accountBalanceCZK"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.accountBalance"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.accountCurrency"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.accountDisposableBalance"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.accountDisposableBalanceCZK"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.iban"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.accountName"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.cancelationDate"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositAccount.creationDate"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="1" name="depositInstance">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="actInterestRate">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Aktualni urokova sazba</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="10"/>
+                          <xsd:fractionDigits value="3"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="activatingDeposit">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Aktivacni vklad</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="activeAccount" type="xsd:boolean">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Priznak, ze je ucet aktivni, byl splacen zakladni vklad pro zalozeni uctu</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="activeCycleStartDate" type="xsd:date">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">datum zacatku aktualni cyklu</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="actualMonthDeposit">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">aktualni m?si?ni vklad</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="afterSavingInterestRate">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">urokova sazba po dosporeni</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="10"/>
+                          <xsd:fractionDigits value="3"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="amountToBonusInterest">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Dosporit pro dosazeni urokoveho bonusu za aktualni misic</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="amountToNextLevel">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Dosporit pro dosazeni vyssiho pasma</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="basicInterest">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">zakladni urokova sazba</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="10"/>
+                          <xsd:fractionDigits value="3"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="bonusInterestRate">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">urokovy bonus do limitu</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="10"/>
+                          <xsd:fractionDigits value="3"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="extraDepositDate" type="xsd:date">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">mimoradny vklad lze vlozit do</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="extraDepositLimit">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">limit pro mimoradny vklad</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="limitOutAmount">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Limit pro vyber mimo den revolvingu</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="limitOutFlag" type="xsd:boolean">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Priznak, zda uz byl vykonany vyber mimo den revolvingu</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="maturity" type="xsd:string">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">doba splatnosti</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="maxBoundaryBonusRate">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Maximalni hranice pro bonusovou urokovou sazbu</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="10"/>
+                          <xsd:fractionDigits value="3"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="maxDeposit">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">maximalni vklad</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="minDeposit">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">minimalni vklad</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="monthInterestAmount">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">dosazeny urok za posledni misic</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="monthlyDeposit">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">mesicni ulozka</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="nextLevelInterestRate">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">urokova sazba pro vyssi pasmo</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="10"/>
+                          <xsd:fractionDigits value="3"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="nextProlongationDate" type="xsd:date">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Datum nejblizsi prolongace</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="possibleAmount">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">mozne vlozit tento misic</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="quarterBonusInterestAmount">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">dosazeny bonusovy urok za posledni etvrtleti</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="requestedCancellationDate" type="xsd:date">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Datum pozadovaneho zruseni uetu</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="savingInterestRate">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">urokova sazba pro obdobi sporeni</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="10"/>
+                          <xsd:fractionDigits value="3"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="accountParty">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.ns1425.accountParty.bankCode"/>
+                          <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.ns1425.accountParty.accountNumber"/>
+                          <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.ns1425.accountParty.accountPrefix"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="interestRateBands">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="unbounded" minOccurs="0" name="interestRateBand">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element maxOccurs="1" minOccurs="0" name="interestRate">
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:decimal">
+                                      <xsd:totalDigits value="10"/>
+                                      <xsd:fractionDigits value="3"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element maxOccurs="1" minOccurs="0" name="limit">
+                                  <xsd:annotation>
+                                    <xsd:documentation xml:lang="en">Limit urokoveho pasma</xsd:documentation>
+                                  </xsd:annotation>
+                                  <xsd:simpleType>
+                                    <xsd:restriction base="xsd:decimal">
+                                      <xsd:totalDigits value="18"/>
+                                      <xsd:fractionDigits value="4"/>
+                                    </xsd:restriction>
+                                  </xsd:simpleType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="payment">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="cashDepositPaymentType" type="xsd:boolean">
+                            <xsd:annotation>
+                              <xsd:documentation xml:lang="en">zda se jdna o vyplaceni jistiny v hotovosti nebo bezhotovostni true = cash false=transfer</xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="cashInterestPaymentType" type="xsd:boolean">
+                            <xsd:annotation>
+                              <xsd:documentation xml:lang="en">zda se jdna o vyplaceni uroku v hotovosti nebo bezhotovostni true = cash false=transfer</xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="depositTransfer">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.ns1425.payment.ns1425.depositTransfer.bankCode"/>
+                                <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.ns1425.payment.ns1425.depositTransfer.accountNumber"/>
+                                <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.ns1425.payment.ns1425.depositTransfer.accountPrefix"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="interestTransfer">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.ns1425.payment.ns1425.interestTransfer.bankCode"/>
+                                <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.ns1425.payment.ns1425.interestTransfer.accountNumber"/>
+                                <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.ns1425.payment.ns1425.interestTransfer.accountPrefix"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:group ref="ns0380:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.remainingRevolvingCount"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.closeDate"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.openDate"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.backendStatus"/>
+                    <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.orgUnitId"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="0" name="hashedId">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="cgpHashedId">
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:maxLength value="40"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="1" name="interestRates">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="interestRate">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="basicInterest">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:decimal">
+                                <xsd:totalDigits value="10"/>
+                                <xsd:fractionDigits value="3"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="dateNextUpdate" type="xsd:date"/>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="diversion">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:decimal">
+                                <xsd:totalDigits value="10"/>
+                                <xsd:fractionDigits value="3"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="interestRateFunction" type="xsd:string"/>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="interestRateType">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:minLength value="1"/>
+                                <xsd:maxLength value="32"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="totalRate">
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:decimal">
+                                <xsd:totalDigits value="10"/>
+                                <xsd:fractionDigits value="3"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:group ref="ns0198:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.interestRates.ns1425.interestRate.interestRateFrequency"/>
+                          <xsd:group ref="ns0198:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.interestRates.ns1425.interestRate.validFrom"/>
+                          <xsd:group ref="ns0198:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.interestRates.ns1425.interestRate.validTo"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="1" name="overdraft">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="amountToDrawn">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">?astka k ?erpani</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="automaticProlongation" type="xsd:boolean">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">Automaticka prolongace kontokorentu</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="drawnAmount">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">?erpana ?astka</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:decimal">
+                          <xsd:totalDigits value="18"/>
+                          <xsd:fractionDigits value="4"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.overdraft.validFrom"/>
+                    <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.overdraft.validTo"/>
+                    <xsd:group ref="ns0198:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.overdraft.loanAmount"/>
+                    <xsd:group ref="ns0198:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.overdraft.maturityDate"/>
+                    <xsd:group ref="ns0198:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.overdraft.productId"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="1" name="persons">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="person">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="role">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.persons.ns1425.person.ns1425.role.partyProdInstanceRoleType"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.persons.ns1425.person.additionalDegree"/>
+                          <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.persons.ns1425.person.degree"/>
+                          <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.persons.ns1425.person.forename"/>
+                          <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.persons.ns1425.person.surname"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="0" name="productInstance">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="cgpProductInstanceId">
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:minLength value="1"/>
+                          <xsd:maxLength value="120"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element maxOccurs="1" minOccurs="0" name="statements">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="statement">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="1" minOccurs="0" name="address">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.l1_recipient"/>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.l2_supplement"/>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.l3_street"/>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.l4_city"/>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.l5_zipcode"/>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.l6_country"/>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.masterAddressId"/>
+                                <xsd:group ref="ns0189:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.addressType"/>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:group ref="ns0215:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.statementOrdinalNumber"/>
+                          <xsd:group ref="ns0215:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.statementDistribution"/>
+                          <xsd:group ref="ns0215:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.statementFrequency"/>
+                          <xsd:group ref="ns0215:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.statementId"/>
+                          <xsd:group ref="ns0215:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.statementLanguage"/>
+                          <xsd:group ref="ns0215:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.statementLine"/>
+                          <xsd:group ref="ns0215:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.validFrom"/>
+                          <xsd:group ref="ns0215:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.validTo"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:group ref="ns0380:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.revolvingDeposit"/>
+              <xsd:group ref="ns0380:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.depositWithdrawalTerm"/>
+              <xsd:group ref="ns0380:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.minBalance"/>
+              <xsd:group ref="ns0380:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.depositPurpose"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element maxOccurs="1" minOccurs="1" name="status">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:group ref="ns0194:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.status.pageReference"/>
+              <xsd:group ref="ns0194:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.status.queryLastPage"/>
+              <xsd:group ref="ns0194:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.status.result"/>
+              <xsd:group ref="ns0194:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.status.totalPageNo"/>
+              <xsd:group ref="ns0194:MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.status.errors"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

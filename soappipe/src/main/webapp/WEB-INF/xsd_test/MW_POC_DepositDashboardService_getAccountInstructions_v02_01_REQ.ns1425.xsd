@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/services/DepositDashboardService/v02_01" xmlns:ns0193="http://csas.cz/CDM/v02/Products" xmlns:ns1425="http://csas.cz/services/DepositDashboardService/v02_01" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:import namespace="http://csas.cz/CDM/v02/Products" schemaLocation="../xsd_test/MW_POC_DepositDashboardService_getAccountInstructions_v02_01_REQ.ns0193.xsd"/>
+  <xsd:element name="getAccountInstructionsRequest">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="cs">Vraci instrukce na eetu</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="1" minOccurs="1" name="account">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_REQ.ns1425.getAccountInstructionsRequest.ns1425.account.bankCode"/>
+              <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_REQ.ns1425.getAccountInstructionsRequest.ns1425.account.accountNumber"/>
+              <xsd:group ref="ns0193:MW_POC_DepositDashboardService_getAccountInstructions_v02_01_REQ.ns1425.getAccountInstructionsRequest.ns1425.account.accountPrefix"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/CDM/v02/Products" xmlns:ns0193="http://csas.cz/CDM/v02/Products" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_REQ.ns1425.getAccountInstructionsRequest.ns1425.account.bankCode">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="bankCode">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Kod banky</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_REQ.ns1425.getAccountInstructionsRequest.ns1425.account.accountNumber">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="accountNumber">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">cislo uctu</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getAccountInstructions_v02_01_REQ.ns1425.getAccountInstructionsRequest.ns1425.account.accountPrefix">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="accountPrefix">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Predcisli uctu, ekvivalent sortCode.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="6"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+</xsd:schema>

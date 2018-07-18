@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://csas.cz/CDM/v02/Steering/Party" xmlns:ns0189="http://csas.cz/CDM/v02/Steering/Party" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.depositInstance.orgUnitId">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="orgUnitId" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.persons.ns1425.person.additionalDegree">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="additionalDegree">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Additional academic degree. (Titul za jmenem.)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.persons.ns1425.person.degree">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="degree">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Academic degree. (titul pred)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="35"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.persons.ns1425.person.forename">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="forename">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">(krestni) jmeno</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="40"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.persons.ns1425.person.surname">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="surname">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">prijmeni</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="40"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.l1_recipient">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="l1_recipient">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Adresni radek 1 Prijmeni, Jmeno, Titul pred, Titul za Pouziti formatovane adresy je popsano primo v entite PostalAddress.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="103"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.l2_supplement">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="l2_supplement">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Adresni radek 2, Doplnek Pouziti formatovane adresy je popsano primo v entite PostalAddress.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="103"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.l3_street">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="l3_street">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Adresni radek 3, Ulice (nebo Cast obce, kdyz je pole Ulice prazdne), „Cislo popisne/orientacni“ nebo „Cislo evidencni Pouziti formatovane adresy je popsano primo v entite PostalAddress.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="103"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.l4_city">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="l4_city">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Adresni radek 4, Obec/Cast Obce Pouziti formatovane adresy je popsano primo v entite PostalAddress.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="103"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.l5_zipcode">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="l5_zipcode">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Adresni radek 5, PSC, Posta Pouziti formatovane adresy je popsano primo v entite PostalAddress.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="103"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.l6_country">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="l6_country">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Adresni radek 6, Stat. Pokud je to CR, pole se nevraci. Pouziti formatovane adresy je popsano primo v entite PostalAddress.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="103"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.masterAddressId">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="masterAddressId">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">CRM ID adresy (row_id adresy v CRM)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:group name="MW_POC_DepositDashboardService_getDepositDetail_v02_01_RES.ns1425.getDepositDetailResponse.ns1425.deposit.ns1425.statements.ns1425.statement.ns1425.address.addressType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="addressType">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Pouziti adresy v CS. Jedna se o sjednoceni vsech moznych uziti v CS. viz. komentar k entite.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="1"/>
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:group>
+</xsd:schema>
